@@ -1,0 +1,23 @@
+{
+  "name": "rollup-plugin-ko-component",
+  "version": "0.0.1",
+  "description": "Roll knockout component.",
+  "main": "index.js",
+  "scripts": {
+    "test": "npm run test"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/differui/rollup-plugin-ko-component.git"
+  },
+  "keywords": [
+    "rollup",
+    "knockout"
+  ],
+  "author": "BinRui.Guan <differui@gmail.com>",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/differui/rollup-plugin-ko-component/issues"
+  },
+  "homepage": "https://github.com/differui/rollup-plugin-ko-component#readme"
+}
