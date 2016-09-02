@@ -32,6 +32,7 @@
   },
   "devDependencies": {
     "ava": "^0.16.0",
+    "babel-plugin-ko-component": "0.0.2",
     "babel-preset-es2015-rollup": "^1.2.0",
     "babelrc-rollup": "^3.0.0",
     "rollup-plugin-babel": "^2.4.0"
