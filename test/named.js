@@ -14,9 +14,8 @@ test('should use default name', t => {
         const code = bundle.generate().code;
 
         ko.components = {
-            register(name, component) {
-                t.is(name, 'component');
-                t.is(name, component.name);
+            register(component) {
+                t.is(component.name, 'component');
             }
         };
 

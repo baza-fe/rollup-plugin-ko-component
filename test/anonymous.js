@@ -14,9 +14,8 @@ test('should use file name', t => {
         const code = bundle.generate().code;
 
         ko.components = {
-            register(name, component) {
-                t.is(name, 'anonymous');
-                t.is(component.name, name);
+            register(component) {
+                t.is(component.name, 'anonymous');
             }
         };
 
