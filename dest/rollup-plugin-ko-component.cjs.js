@@ -4,11 +4,11 @@ function _interopDefault (ex) { return (ex && (typeof ex === 'object') && 'defau
 
 var path = require('path');
 var rollupPluginutils = require('rollup-pluginutils');
-var babelCore = _interopDefault(require('babel-core'));
+var babelCore = require('babel-core');
 var component = _interopDefault(require('babel-plugin-ko-component'));
 
 function plugin() {
-    var options = arguments.length <= 0 || arguments[0] === undefined ? {} : arguments[0];
+    var options = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : {};
 
     var filter = rollupPluginutils.createFilter(options.include || ['**/*.js'], options.exclude || 'node_modules/**');
 
@@ -37,6 +37,6 @@ function plugin() {
             }
         }
     };
-};
+}
 
 module.exports = plugin;

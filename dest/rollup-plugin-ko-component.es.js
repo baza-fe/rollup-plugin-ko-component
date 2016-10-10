@@ -1,10 +1,10 @@
 import { parse } from 'path';
 import { createFilter } from 'rollup-pluginutils';
-import babelCore from 'babel-core';
+import { transform as transform$1 } from 'babel-core';
 import component from 'babel-plugin-ko-component';
 
 function plugin() {
-    var options = arguments.length <= 0 || arguments[0] === undefined ? {} : arguments[0];
+    var options = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : {};
 
     var filter = createFilter(options.include || ['**/*.js'], options.exclude || 'node_modules/**');
 
@@ -25,7 +25,7 @@ function plugin() {
 
             try {
                 return {
-                    code: babelCore.transform(code, { plugins: component }).code,
+                    code: transform$1(code, { plugins: component }).code,
                     map: { mappings: '' }
                 };
             } catch (error) {
@@ -33,6 +33,6 @@ function plugin() {
             }
         }
     };
-};
+}
 
 export default plugin;
