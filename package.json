@@ -1,6 +1,6 @@
 {
   "name": "rollup-plugin-ko-component",
-  "version": "0.0.3",
+  "version": "0.0.4",
   "description": "Roll knockout component.",
   "main": "dest/rollup-plugin-ko-component.cjs.js",
   "jsnext:main": "dest/rollup-plugin-ko-component.es.js",
@@ -28,13 +28,15 @@
     "rollup": "^0.34.11"
   },
   "dependencies": {
-    "rollup-pluginutils": "^1.3.1"
+    "rollup-pluginutils": "^1.3.1",
+    "babel-plugin-ko-component": "0.0.2"
   },
   "devDependencies": {
     "ava": "^0.16.0",
-    "babel-plugin-ko-component": "0.0.2",
-    "babel-preset-es2015-rollup": "^1.2.0",
+    "babel-core": "^6.17.0",
+    "babel-preset-es2015": "^6.16.0",
     "babelrc-rollup": "^3.0.0",
+    "rollup": "^0.36.3",
     "rollup-plugin-babel": "^2.4.0"
   }
 }
