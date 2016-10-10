@@ -4,14 +4,14 @@ const babelrc = require('babelrc-rollup').default;
 
 rollup.rollup({
     entry: './src/index.js',
-    external: [
-        'path',
-        'rollup-pluginutils',
-        'babel-core',
-        'babel-plugin-ko-component'
-    ],
     plugins: [
         babel(babelrc())
+    ],
+    external: [
+        "path",
+        "rollup-pluginutils",
+        "babel-core",
+        "babel-plugin-ko-component"
     ]
 }).then((bundle) => {
     bundle.write({

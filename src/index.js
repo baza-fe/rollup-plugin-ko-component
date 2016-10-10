@@ -1,6 +1,6 @@
 import { parse } from 'path';
 import { createFilter } from 'rollup-pluginutils';
-import babelCore from 'babel-core';
+import { transform } from 'babel-core';
 import component from 'babel-plugin-ko-component';
 
 export default function plugin(options = {}) {
@@ -28,7 +28,7 @@ export default function plugin(options = {}) {
 
             try {
                 return {
-                    code: babelCore.transform(code, { plugins: component }).code,
+                    code: transform(code, { plugins: component }).code,
                     map: { mappings: '' }
                 };
             } catch (error) {
