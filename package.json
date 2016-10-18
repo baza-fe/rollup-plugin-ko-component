@@ -1,6 +1,6 @@
 {
   "name": "rollup-plugin-ko-component",
-  "version": "0.0.5",
+  "version": "0.0.6",
   "description": "Roll knockout component.",
   "main": "dest/rollup-plugin-ko-component.cjs.js",
   "jsnext:main": "dest/rollup-plugin-ko-component.es.js",
