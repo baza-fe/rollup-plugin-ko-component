@@ -11,7 +11,8 @@ rollup.rollup({
         "path",
         "rollup-pluginutils",
         "babel-core",
-        "babel-plugin-ko-component"
+        "babel-plugin-ko-component",
+        "lru-fast"
     ]
 }).then((bundle) => {
     bundle.write({

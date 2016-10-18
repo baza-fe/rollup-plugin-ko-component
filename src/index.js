@@ -2,6 +2,9 @@ import { parse } from 'path';
 import { createFilter } from 'rollup-pluginutils';
 import { transform } from 'babel-core';
 import component from 'babel-plugin-ko-component';
+import { LRUCache } from 'lru-fast';
+
+const cache = new LRUCache(50);
 
 export default function plugin(options = {}) {
     const filter = createFilter(options.include || [ '**/*.js' ], options.exclude || 'node_modules/**');
@@ -10,6 +13,10 @@ export default function plugin(options = {}) {
         transform(code, id) {
             if (!filter(id)) {
                 return null;
+            }
+
+            if (cache.find(id)) {
+                return cache.get(id);
             }
 
             const labelIdentifierName = '__ko_component_label__';
@@ -27,10 +34,12 @@ export default function plugin(options = {}) {
             ].join('\n');
 
             try {
-                return {
+                cache.put(id, {
                     code: transform(code, { plugins: component }).code,
                     map: { mappings: '' }
-                };
+                });
+
+                return cache.get(id);
             } catch (error) {
                 throw error;
             }
