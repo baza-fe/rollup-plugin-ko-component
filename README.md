@@ -1,6 +1,28 @@
 rollup-plugin-ko-component
 =====
 
+<p>
+    <a href="LICENSE">
+        <img src="https://img.shields.io/badge/license-MIT-brightgreen.svg" alt="Software License" />
+    </a>
+    <a href="https://github.com/baze-fe/rollup-plugin-ko-component/issues">
+        <img src="https://img.shields.io/github/issues/baze-fe/rollup-plugin-ko-component.svg" alt="Issues" />
+    </a>
+    <a href="http://standardjs.com/">
+        <img src="https://img.shields.io/badge/code%20style-standard-brightgreen.svg" alt="JavaScript Style Guide" />
+    </a>
+    <a href="https://npmjs.org/package/rollup-plugin-ko-component">
+        <img src="https://img.shields.io/npm/v/rollup-plugin-ko-component.svg?style=flat-squar" alt="NPM" />
+    </a>
+    <a href="https://github.com/baze-fe/rollup-plugin-ko-component/releases">
+        <img src="https://img.shields.io/github/release/baze-fe/rollup-plugin-ko-component.svg" alt="Latest Version" />
+    </a>
+    <a href="https://travis-ci.org/baze-fe/rollup-plugin-ko-component">
+        <img src="https://travis-ci.org/baze-fe/rollup-plugin-ko-component.svg?branch=master" />
+    </a>
+</p>
+
+
 ## Usage
 
 ```bash
