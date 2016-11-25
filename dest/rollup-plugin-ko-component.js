@@ -10,13 +10,13 @@ var lruFast = require('lru-fast');
 
 var cache = new lruFast.LRUCache(50);
 
-function plugin() {
-    var options = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : {};
+function plugin(options) {
+    if ( options === void 0 ) options = {};
 
-    var filter = rollupPluginutils.createFilter(options.include || ['**/*.js'], options.exclude || 'node_modules/**');
+    var filter = rollupPluginutils.createFilter(options.include || [ '**/*.js' ], options.exclude || 'node_modules/**');
 
     return {
-        transform: function transform(code, id) {
+        transform: function transform$1(code, id) {
             if (!filter(id)) {
                 return null;
             }
@@ -28,11 +28,16 @@ function plugin() {
             var labelIdentifierName = '__ko_component_label__';
             var styleIdentifierName = '__ko_component_style__';
             var templateIdentifierName = '__ko_component_template__';
-            var labelIdentifierValue = '\'' + path.parse(id).name + '\'';
-            var styleIdentifierValue = '\'\'';
-            var templateIdentifierValue = '\'\'';
+            var labelIdentifierValue = "'" + (path.parse(id).name) + "'";
+            var styleIdentifierValue = "''";
+            var templateIdentifierValue = "''";
 
-            code = ['const ' + labelIdentifierName + ' = ' + labelIdentifierValue + ';', 'const ' + styleIdentifierName + ' = ' + styleIdentifierValue + ';', 'const ' + templateIdentifierName + ' = ' + templateIdentifierValue + ';', code].join('\n');
+            code = [
+                ("const " + labelIdentifierName + " = " + labelIdentifierValue + ";"),
+                ("const " + styleIdentifierName + " = " + styleIdentifierValue + ";"),
+                ("const " + templateIdentifierName + " = " + templateIdentifierValue + ";"),
+                code
+            ].join('\n');
 
             try {
                 cache.put(id, {

@@ -1,11 +1,10 @@
 const rollup = require('rollup');
-const babel = require('rollup-plugin-babel');
-const babelrc = require('babelrc-rollup').default;
+const buble = require('rollup-plugin-buble');
 
 rollup.rollup({
     entry: './src/index.js',
     plugins: [
-        babel(babelrc())
+        buble()
     ],
     external: [
         "path",
@@ -16,11 +15,7 @@ rollup.rollup({
     ]
 }).then((bundle) => {
     bundle.write({
-        dest: 'dest/rollup-plugin-ko-component.cjs.js',
+        dest: 'dest/rollup-plugin-ko-component.js',
         format: 'cjs'
-    });
-    bundle.write({
-        dest: 'dest/rollup-plugin-ko-component.es.js',
-        format: 'es'
     });
 }).catch(console.error);
